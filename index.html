@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kirana Khata – a ledger that listens</title>
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;800&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Kirana Khata<small>Say it once. The ledger writes itself.</small></h1>
+  <label class="shop">Shop name <input id="shop" aria-label="Shop name"></label>
+</header>
+
+<div class="grid">
+  <section class="card paper" aria-label="Add entry">
+    <h2>Aaj kya hua? What happened?</h2>
+    <textarea id="say" placeholder="Ramesh took 200 rupees of goods today" aria-label="Type or speak one sentence"></textarea>
+    <div class="bar">
+      <button class="primary" id="go">Understand</button>
+      <button class="mic" id="mic" title="Speak in Hindi, English or Hinglish">🎤 Speak</button>
+      <select id="lang" aria-label="Speech language"><option value="hi-IN">Hindi / Hinglish</option><option value="en-IN">English (India)</option></select>
+    </div>
+    <div class="chips" id="chips"></div>
+    <div id="confirm" hidden></div>
+  </section>
+
+  <section class="card" aria-label="Who owes the most">
+    <h2>Who owes the most</h2>
+    <div class="tot" id="tot"></div>
+    <div id="debtors"></div>
+  </section>
+</div>
+
+<section class="card" aria-label="Weekly summary">
+  <h2>This week: credit given vs payments received</h2>
+  <div class="stats" id="stats"></div>
+  <div id="chart"></div>
+  <div class="leg"><span><i style="background:var(--red)"></i>Credit given</span><span><i style="background:var(--green)"></i>Payment received</span></div>
+</section>
+
+<footer>Everything is saved only in this browser.<button id="demo">Load demo data</button><button id="clear">Clear all</button></footer>
+</div>
+
+<datalist id="cl"></datalist>
+<dialog id="dlg"></dialog>
+<div id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
